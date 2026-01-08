@@ -1,0 +1,140 @@
+<!--<!DOCTYPE html>
+<html><head><title>Register - Online Crime Monitoring System</title></head>
+<body>
+<h1>Register</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Register</button>
+</form>
+<p>Already have an account? <a href="/citizen/login/">Login</a></p>
+</body></html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Online Crime Monitoring System</title>
+    <style>
+        /* Reset defaults */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(circle at top right, #bfdbfe33, transparent 60%),
+                        radial-gradient(circle at bottom left, #93c5fd33, transparent 60%);
+        }
+
+        /* Register form card */
+        .register-container {
+            background: #ffffff;
+            width: 420px;
+            padding: 40px 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        /* Title */
+        h1 {
+            color: #1e3a8a;
+            margin-bottom: 25px;
+        }
+
+        /* Form */
+        form {
+            text-align: left;
+        }
+
+        form p {
+            margin-bottom: 15px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            margin-top: 5px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 5px #93c5fd;
+        }
+
+        /* Button */
+        button {
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+            box-shadow: 0 0 10px #60a5fa;
+            transform: scale(1.03);
+        }
+
+        /* Login link */
+        .login-link {
+            margin-top: 15px;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .login-link a {
+            text-decoration: none;
+            color: #1e3a8a;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .login-link a:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h1>Citizen Registration</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register</button>
+        </form>
+
+        <p class="login-link">Already have an account?
+            <a href="/citizen/login/">Login here</a>
+        </p>
+    </div>
+</body>
+</html>

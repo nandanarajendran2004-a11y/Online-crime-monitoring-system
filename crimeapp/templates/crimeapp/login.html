@@ -1,0 +1,153 @@
+<!--<!DOCTYPE html>
+<html><head><title>Login - Online Crime Monitoring System</title></head>
+<body>
+<h1>Citizen Login</h1>
+{% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+<form method="post">
+  {% csrf_token %}
+  <p>Username: <input type="text" name="username" required></p>
+  <p>Password: <input type="password" name="password" required></p>
+  <button type="submit">Login</button>
+</form>
+<p><a href="/citizen/register/">Register</a></p>
+</body></html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Online Crime Monitoring System</title>
+    <style>
+        /* Reset defaults */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle at top right, #bfdbfe33, transparent 60%),
+                        radial-gradient(circle at bottom left, #93c5fd33, transparent 60%);
+        }
+
+        /* Login card */
+        .login-container {
+            background: #ffffff;
+            width: 380px;
+            padding: 40px 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        /* Title */
+        h1 {
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+
+        /* Error message */
+        .error {
+            color: red;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        /* Form fields */
+        form p {
+            margin-bottom: 15px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            margin-top: 5px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 5px #93c5fd;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+            box-shadow: 0 0 10px #60a5fa;
+            transform: scale(1.03);
+        }
+
+        /* Register link */
+        .register-link {
+            margin-top: 15px;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .register-link a {
+            text-decoration: none;
+            color: #1e3a8a;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .register-link a:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Citizen Login</h1>
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <p>Username:
+                <input type="text" name="username" required>
+            </p>
+            <p>Password:
+                <input type="password" name="password" required>
+            </p>
+            <button type="submit">Login</button>
+        </form>
+
+        <p class="register-link">Don't have an account? 
+            <a href="/citizen/register/">Register here</a>
+        </p>
+    </div>
+</body>
+</html>
